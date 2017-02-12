@@ -73,9 +73,9 @@ end)
 -- Update status to MQTT
 function mqtt_update()
     if (gpio.read(relayPin) == 0) then
-        m:publish("/home/".. roomID .."/" .. deviceID .. "/state","OFF",0,1)
+        m:publish("/home/".. roomID .."/" .. deviceID .. "/state","OFF ".."/home/".. roomID .."/" .. deviceID,0,1)
     else
-        m:publish("/home/".. roomID .."/" .. deviceID .. "/state","ON",0,1)
+        m:publish("/home/".. roomID .."/" .. deviceID .. "/state","ON ".."/home/".. roomID .."/" .. deviceID,0,1)
     end
 end
   
